@@ -1,7 +1,46 @@
 groups:
-    Default:
+    Member:
         default: true
         permissions:
+        - modifyworld.blocks.place.*
+        - modifyworld.blocks.interact.*
+        - modifyworld.*
+        - essentials.build
+        - permissions.build
+        - essentials.warps.*
+        - essentials.delhome
+        - essentials.signs.create.free
+        - essentials.signs.use.free
+        - essentials.signs.use.protection
+        - essentials.protect.damage.lightning
+        - essentials.protect.damage.drowning
+        - essentials.protect.damage.lava
+        - essentials.protect.damage.fire
+        - essentials.protect.damage.suffocation
+        - essentials.protect.damage.projectiles
+        - essentials.protect.damage.fall
+        - essentials.tpdeny
+        - essentials.tpaccept
+        - essentials.mail.send
+        - essentials.warp.list
+        - essentials.suicide
+        - essentials.kit
+        - essentials.ping
+        - essentials.seen
+        - essentials.realname
+        - essentials.mail
+        - essentials.afk
+        - essentials.r
+        - essentials.msg
+        - essentials.pay
+        - essentials.balance
+        - essentials.worth
+        - essentials.sethome
+        - essentials.sell
+        - essentials.home
+        - essentials.tpahere
+        - essentials.tpa
+        - essentials.back
         - essentials.spawn
         - essentials.rules
         - essentials.motd
@@ -9,48 +48,30 @@ groups:
         - essentials.helpop
         - essentials.help
         - modifyworld.*
-        prefix: '&e'
+        prefix: '&f'
         options:
-            build: false
+            build: true
             rank: '1000'
-    Builder:
+    VIP:
         permissions:
+        - essentials.feed
         - essentials.afk
         - essentials.back
         - essentials.back.ondeath
         - essentials.balance
-        - essentials.balance.others
-        - essentials.balancetop
-        - essentials.chat.color
-        - essentials.chat.shout
-        - essentials.chat.question
-        - essentials.compass
         - essentials.depth
         - essentials.home
         - essentials.ignore
         - essentials.kit
-        - essentials.kits.tools
         - essentials.mail
         - essentials.mail.send
         - essentials.me
         - essentials.msg
-        - essentials.nick
         - essentials.pay
         - essentials.ping
-        - essentials.powertool
-        - essentials.protect
         - essentials.sethome
         - essentials.signs.use.*
-        - essentials.signs.create.disposal
-        - essentials.signs.create.mail
-        - essentials.signs.create.protection
-        - essentials.signs.create.trade
-        - essentials.signs.break.disposal
-        - essentials.signs.break.mail
-        - essentials.signs.break.protection
-        - essentials.signs.break.trade
         - essentials.suicide
-        - essentials.time
         - essentials.tpa
         - essentials.tpaccept
         - essentials.tpahere
@@ -59,92 +80,109 @@ groups:
         - essentials.warp.list
         - essentials.worth
         inheritance:
-        - default
-        prefix: '&2'
+        - Member
+        prefix: '&f'
         options:
             build: true
             rank: '500'
+    Semi-Mod:
+        permissions:
+        - essentials.repair
+        - essentials.kick.notify
+        - essentials.kick
+        - essentials.weather.sun
+        - essentials.sun
+        - essentials.night
+        - essentials.clearinventory
+        inheritance:
+        - VIP
+        prefix: '&f'
+        options:
+            build: true
+            rank: '350'
     Moderator:
         permissions:
-        - essentials.ban
-        - essentials.ban.notify
-        - essentials.banip
         - essentials.broadcast
         - essentials.clearinventory
-        - essentials.delwarp
-        - essentials.eco.loan
-        - essentials.ext
-        - essentials.getpos
         - essentials.helpop.recieve
-        - essentials.home.others
-        - essentials.invsee
         - essentials.jails
-        - essentials.jump
         - essentials.kick
         - essentials.kick.notify
-        - essentials.kill
         - essentials.mute
-        - essentials.nick.others
         - essentials.realname
-        - essentials.setwarp
         - essentials.signs.create.*
         - essentials.signs.break.*
-        - essentials.spawner
-        - essentials.thunder
         - essentials.time
         - essentials.time.set
-        - essentials.protect.alerts
-        - essentials.protect.admin
-        - essentials.protect.ownerinfo
-        - essentials.ptime
-        - essentials.ptime.others
-        - essentials.togglejail
-        - essentials.top
-        - essentials.tp
-        - essentials.tphere
-        - essentials.tppos
-        - essentials.tptoggle
         - essentials.unban
         - essentials.unbanip
         - essentials.weather
-        - essentials.whois
-        - essentials.world
-        - essentials.worlds.*
-        - permissions.user.promote.default
-        - permissions.user.demote.default
-        - permissions.manage.membership
+        - essentials.jail
+        - essentials.ban.exempt
         inheritance:
-        - builder
-        prefix: '&5'
+        - Semi-Mod
+        prefix: '&f'
         options:
             build: true
             rank: '200'
     Admin:
         permissions:
-        - -essentials.backup
-        - -essentials.essentials
-        - -essentials.setspawn
-        - -essentials.reloadall
-        - essentials.*
-        - permissions.manage.users
-        - permissions.manage.users.permissions
-        - permissions.manage.users.permissions.timed
+        - essentials.gamemode
+        - essentials.tp
+        - essentials.tphere
+        - essentials.tpall
+        - essentials.setwarp
+        - essentials.kill
+        - essentials.invsee
+        - essentials.give
+        - essentials.heal
+        - essentials.lightning
+        - essentials.thunder
+        - essentials.balance
+        - essentials.chat.spy
+        - essentials.socialspy
+        - essentials.ban
+        - essentials.tempban
+        - essentials.ban.offline
+        - essentials.repair.enchanted
+        - essentials.fly
+        - essentials.chat.color
+        - essentials.chat.magic
+        - essentials.vanish
+        - essentials.exp.set
+        - essentials.exp
+        - essentials.exp.give
+        - essentials.invsee.preventmodify
+        - essentials.workbench
         inheritance:
-        - moderator
-        prefix: '&c'
+        - Moderator
+        prefix: '&f'
         options:
             build: true
             rank: '100'
+    Co-Owner:
+        permissions:
+        - '*'
+        - srpex.setrank
+        - essentials.vanish.see
+        - permissions.manage.users
+        - permissions.manage.users.permissions
+        - permissions.manage.users.permissions.timed
+        - essentials.*
+        - essentials.world
+        - essentials.worlds.*
+        inheritance:
+        - Admin
+        prefix: '&f'
+        options:
+            build: true
+            rank: '1'
     Owner:
         permissions:
         - '*'
         inheritance:
-        - admin
+        - Co-Owner
         prefix: '&4'
         options:
             build: true
             rank: '0'
-users:
-    snowleo:
-        group:
-        - Builder
